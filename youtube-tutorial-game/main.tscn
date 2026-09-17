@@ -23,6 +23,9 @@ albedo_color = Color(0.35484228, 0.5259028, 0.23696476, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mf8xc"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_mf8xc"]
+size = Vector3(0.7734375, 0.17871094, 0.428833)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa41v"]
 albedo_color = Color(0.30200163, 0.20797905, 0.094496556, 1)
 
@@ -46,7 +49,7 @@ material = SubResource("StandardMaterial3D_te30y")
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1701982278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3923233, 0)
 script = ExtResource("1_ig7tw")
-speed = 20.0
+speed = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1143494092]
 shape = SubResource("CapsuleShape3D_mf8xc")
@@ -54,12 +57,17 @@ shape = SubResource("CapsuleShape3D_mf8xc")
 [node name="PlayerModel" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1364415979]
 mesh = SubResource("CapsuleMesh_mf8xc")
 
+[node name="PlayerFace" type="MeshInstance3D" parent="CharacterBody3D/PlayerModel" unique_id=1219295705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56835806, -0.39782405)
+mesh = SubResource("BoxMesh_mf8xc")
+
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=927496795]
-transform = Transform3D(1, 0, 0, 0, 0.8687781, 0.49520147, 0, -0.49520147, 0.8687781, 0, 2.7581913, 6.106654)
+transform = Transform3D(1, 0, 0, 0, 0.75368094, 0.6572405, 0, -0.6572405, 0.75368094, 0, 6.0003796, 3.7886577)
 
 [node name="Tree" type="CSGCylinder3D" parent="." unique_id=1266252301]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 9.933138, 3.6120725, 4.0541177)
 use_collision = true
+radius = 0.2861328
 material = SubResource("StandardMaterial3D_oa41v")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Tree" unique_id=926456971]
@@ -67,22 +75,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8942585, 0)
 radius = 1.085
 material = SubResource("StandardMaterial3D_mf8xc")
 
-[node name="Tree2" type="CSGCylinder3D" parent="." unique_id=1616861607]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 9.933138, 3.6120725, -17.445139)
+[node name="Tree2" type="CSGCylinder3D" parent="." unique_id=1305898689]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22.990957, 3.6120725, -25.412188)
 use_collision = true
+radius = 0.2861328
 material = SubResource("StandardMaterial3D_oa41v")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Tree2" unique_id=762664921]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Tree2" unique_id=1563587569]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8942585, 0)
 radius = 1.085
 material = SubResource("StandardMaterial3D_mf8xc")
 
-[node name="Tree3" type="CSGCylinder3D" parent="." unique_id=1139683580]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -15.022528, 3.6120725, -30.186024)
+[node name="Tree4" type="CSGCylinder3D" parent="." unique_id=173095766]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -27.300585, 3.6120725, 23.540716)
 use_collision = true
+radius = 0.2861328
 material = SubResource("StandardMaterial3D_oa41v")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Tree3" unique_id=1488198274]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Tree4" unique_id=566174450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8942585, 0)
+radius = 1.085
+material = SubResource("StandardMaterial3D_mf8xc")
+
+[node name="Tree5" type="CSGCylinder3D" parent="." unique_id=1172903264]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 35.56408, 3.6120725, 34.93877)
+use_collision = true
+radius = 0.2861328
+material = SubResource("StandardMaterial3D_oa41v")
+
+[node name="Tree3" type="CSGCylinder3D" parent="Tree5" unique_id=824722592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0606837, 0, -15.198242)
+use_collision = true
+radius = 0.2861328
+material = SubResource("StandardMaterial3D_oa41v")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Tree5/Tree3" unique_id=2011053247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8942585, 0)
+radius = 1.085
+material = SubResource("StandardMaterial3D_mf8xc")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Tree5" unique_id=1426918297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8942585, 0)
+radius = 1.085
+material = SubResource("StandardMaterial3D_mf8xc")
+
+[node name="Tree6" type="CSGCylinder3D" parent="." unique_id=755389704]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.9315262, 3.6120725, -32.748142)
+use_collision = true
+radius = 0.2861328
+material = SubResource("StandardMaterial3D_oa41v")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Tree6" unique_id=371102617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8942585, 0)
+radius = 1.085
+material = SubResource("StandardMaterial3D_mf8xc")
+
+[node name="Tree7" type="CSGCylinder3D" parent="." unique_id=186889560]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22.478325, 3.6120725, -2.1487484)
+use_collision = true
+radius = 0.2861328
+material = SubResource("StandardMaterial3D_oa41v")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Tree7" unique_id=909073284]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8942585, 0)
 radius = 1.085
 material = SubResource("StandardMaterial3D_mf8xc")
